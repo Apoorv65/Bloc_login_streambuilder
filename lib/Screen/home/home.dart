@@ -36,9 +36,7 @@ class _HomeState extends State<Home> {
                           fontSize: 90)),
                 ),
                 SizedBox(
-
-                  width: w/1.2
-                  ,
+                  width: w/1.2,
                   height: h/3,
                   child: SingleChildScrollView(
                     child: StreamBuilder<String>(
@@ -66,24 +64,27 @@ class _HomeState extends State<Home> {
                   ),
                 ),
 
-                Container(
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: const Color(0xffc7021b)),
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: TextField(
-                        controller: _text,
-                        onChanged: (val) {
-                        _streamController.add(_text.text);
-                        },
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Enter Something',
-                            hintStyle: GoogleFonts.kumbhSans()),
-                      ),
-                    ))
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          border: Border.all(color: const Color(0xffc7021b)),
+                          borderRadius: BorderRadius.circular(50)),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: TextField(
+                          controller: _text,
+                          onChanged: (val) {
+                          _streamController.add(_text.text);
+                          },
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Enter Something',
+                              hintStyle: GoogleFonts.kumbhSans()),
+                        ),
+                      )),
+                )
               ],
             ),
           ),
